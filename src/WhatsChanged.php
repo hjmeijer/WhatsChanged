@@ -43,7 +43,7 @@ class WhatsChanged
         }
     }
 
-    public function getTestFiles(array $changes): array
+    public function getTestFiles(array $changes)
     {
         $files = array();
 
@@ -56,7 +56,7 @@ class WhatsChanged
         return array_unique($files);
     }
 
-    public function isWatchedFile(string $file): bool
+    public function isWatchedFile($file)
     {
         $file = strtolower($file);
 
@@ -78,7 +78,7 @@ class WhatsChanged
         return false;
     }
 
-    public function getTestFile(string $file)
+    public function getTestFile($file)
     {
         if (!$this->isWatchedFile($file)) {
             return "";
@@ -91,7 +91,7 @@ class WhatsChanged
         return $this->turnIntoTestFile($file);
     }
 
-    private function turnIntoTestFile(string $file): string
+    private function turnIntoTestFile($file)
     {
         $pos = strpos($file, "src/");
 

@@ -13,5 +13,5 @@ interface VCS
 {
     public function __construct($binary = "");
 
-    public function getChangedFiles(): array;
+    public function getChangedFiles();
 }

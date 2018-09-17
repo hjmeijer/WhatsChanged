@@ -32,7 +32,7 @@ class Git implements VCS
         }
     }
 
-    private function isOSWindows(): bool
+    private function isOSWindows()
     {
         if (strtoupper(substr(PHP_OS, 0, 3)) === 'WIN') {
             return true;
@@ -41,7 +41,7 @@ class Git implements VCS
         return false;
     }
 
-    public function gitExists(): bool
+    public function gitExists()
     {
         $returnVar = intval(trim(shell_exec($this->binary . " &> /dev/null; echo $?")));
 
@@ -52,7 +52,7 @@ class Git implements VCS
         return false;
     }
 
-    private function isProjectGit(): bool
+    private function isProjectGit()
     {
         $isProjectGit = trim(shell_exec("git rev-parse --is-inside-work-tree"));
 
@@ -63,7 +63,7 @@ class Git implements VCS
         return false;
     }
 
-    public function getChangedFiles(): array
+    public function getChangedFiles()
     {
 
         $changes = $this->execute("git diff --name-only");
@@ -78,12 +78,12 @@ class Git implements VCS
         return $files;
     }
 
-    private function countCommits(): int
+    private function countCommits()
     {
         return intval(trim($this->execute("git shortlog | grep -E '^[ ]+\\w+' | wc -l")));
     }
 
-    private function execute(string $command): string
+    private function execute($command)
     {
         return trim(shell_exec($command));
     }

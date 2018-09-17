@@ -1,10 +1,10 @@
 {
   "name": "icyapril/whats-changed",
-  "description": "Run PHPUnit tests on only classes and tests which have changed",
+  "description": "Run PHPUnit tests on only classes and tests which have changed; PHP 5.6 backport",
   "type": "library",
   "require": {
-    "php": ">=7.0",
-    "phpunit/phpunit": "^6.0"
+    "php": ">=5.6",
+    "phpunit/phpunit": "^5.0"
   },
   "license": "BSD-3-Clause",
   "authors": [
